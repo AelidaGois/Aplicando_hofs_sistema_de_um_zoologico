@@ -26,4 +26,21 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('popularity')).toEqual(5); 
     })
 
+    it('Quando colocado como parâmetro `availability`retornar um array com a relação de dias em que é possível visitar os elefantes',() =>
+    {
+    expect(handlerElephants('availability')).toEqual([ 'Friday', 'Saturday', 'Sunday', 'Tuesday' ]); 
+    })
+    it('Quando colocado um parâmetro inexistente retornar `null`',() =>
+    {
+    expect(handlerElephants('xmfjeofe')).toBeNull(); 
+    })
+    it('Quando não colocado nenhum parâmetro retornar `undefined`',() =>
+    {
+    expect(handlerElephants()).toBeUndefined(); 
+    })
+    it('Quando o parâmetro passado não for do tipo string retornar `Parâmetro inválido, é necessário uma string`',() =>
+    {
+    expect(handlerElephants(12233)).toStrictEqual('Parâmetro inválido, é necessário uma string'); 
+    })
+
       });
