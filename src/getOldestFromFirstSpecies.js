@@ -15,9 +15,17 @@ function getOldestFromFirstSpecies(id) {
 const employee = getEmployeById(id);
 const specie = getFirstSpecie(employee);
 return specie.residents.reduce((acc,resident) => {
-if(resident.age >)
-},[])
-console.log(specie);
+if(resident.age > acc.age) {
+  return resident;
+}
+return acc;
+
+},residents[0])
+
 }getOldestFromFirstSpecies('56d43ba3-a5a7-40f6-8dd7-cbb05082383f')
+
+
+
+
 
 module.exports = getOldestFromFirstSpecies;
